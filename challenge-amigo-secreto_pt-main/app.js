@@ -12,4 +12,14 @@ function adicionarAmigo() {
 
     amigos.push(nome);  // Adiciona o nome ao array
     input.value = '';  // Limpa o input
+    atualizarLista();  // Atualiza a lista de amigos
+}
+
+function atualizarLista() {
+    const lista = document.getElementById('listaAmigos');
+    lista.innerHTML = '';  // Limpa a lista
+
+    amigos.forEach(amigo => {
+        lista.innerHTML += `<li>${amigo}</li>`;  // Adiciona o nome à lista
+    });
 }
